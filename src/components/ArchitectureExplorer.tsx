@@ -1,10 +1,77 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Copy, Check, Terminal, ArrowRight } from 'lucide-react';
+import { Copy, Check, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
 
 export const ArchitectureExplorer: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'s4hana' | 'brim' | 'btp' | 'ai'>('s4hana');
   const [copied, setCopied] = useState(false);
+
+  const corporateModules = {
+    s4hana: {
+      badge: 'Clean Core Strategy',
+      title: 'SAP S/4HANA Cloud & BTP',
+      tagline: 'Zero Core Modifications · Side-by-Side CAP/RAP',
+      specs: [
+        { label: 'S/4HANA Target', value: '2026 Clean Core' },
+        { label: 'Subledger Sync', value: 'FI-CA Real-Time' },
+        { label: 'Currencies', value: 'USD, AED, INR, EUR' },
+        { label: 'SLA Guarantee', value: '99.999% SLA' }
+      ],
+      highlights: [
+        'Preserves core ERP standard code for frictionless automatic updates',
+        'Event-driven asynchronous messaging via AMQP Enterprise Broker',
+        'Modern Fiori UI5 launchpad with unified mobile responsiveness'
+      ]
+    },
+    brim: {
+      badge: 'High-Volume Monetization',
+      title: 'SAP BRIM Convergent Invoicing',
+      tagline: '10M Events / Hour · Sub-20ms Rating Latency',
+      specs: [
+        { label: 'Throughput', value: '10M Events / hr' },
+        { label: 'Mediation', value: 'Kafka Stream' },
+        { label: 'Pricing Matrix', value: 'Dynamic Billing' },
+        { label: 'Settlement', value: 'Zero Drift' }
+      ],
+      highlights: [
+        'Real-time credit checks and multi-tier usage metering',
+        'Pre-integrated Vertex tax engine for cross-border compliance',
+        'Automated dispute resolution cutting reconciliation overhead'
+      ]
+    },
+    btp: {
+      badge: 'Enterprise Cloud Extensions',
+      title: 'SAP BTP Microservices Mesh',
+      tagline: 'Strict Tenant Isolation · Zero Data Drift',
+      specs: [
+        { label: 'Isolation', value: 'Strict Tenant VPC' },
+        { label: 'Security', value: 'XSUAA & MFA' },
+        { label: 'Connectivity', value: 'Cloud Connector' },
+        { label: 'Propagation', value: 'Principal Trust' }
+      ],
+      highlights: [
+        'Custom vendor portal, procure-to-pay, and audit microservices',
+        'Clean extension runtime without modifying underlying database',
+        'Role-based zero-trust security and end-to-end token validation'
+      ]
+    },
+    ai: {
+      badge: 'Autonomous Operations',
+      title: 'Enterprise Self-Healing AIOps',
+      tagline: '3.4s MTTD · 82% MTTR Acceleration',
+      specs: [
+        { label: 'Detection Speed', value: '< 3.4 seconds' },
+        { label: 'MTTR Speedup', value: '82% Faster' },
+        { label: 'Data Privacy', value: '100% Private Cloud' },
+        { label: 'Telemetry', value: 'SolMan & Cloud Stream' }
+      ],
+      highlights: [
+        'Autonomous rate-limited reprocessing of blocked IDoc queues',
+        'Automated rogue lock-table mitigation with instant incident notification',
+        'Deep LLM diagnostic note matching for immediate resolution'
+      ]
+    }
+  };
 
   const codeSnippets = {
     s4hana: `// Clyptus SAP S/4HANA Clean Core Migration Architecture
@@ -103,8 +170,8 @@ export const autonomousOps = new ClyptusAIOps({
           {/* Left Column: Technical Narrative (Stripe Style) */}
           <div className="lg:col-span-5 space-y-5">
             <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.06em] text-[#ea4800]">
-              <Terminal className="w-4 h-4" />
-              Developer & Architect Blueprint
+              <ShieldCheck className="w-4 h-4" />
+              Enterprise Architecture Blueprint
             </div>
 
             <h2 className="text-3xl sm:text-5xl font-light tracking-[-0.03em] text-white leading-tight">
@@ -145,9 +212,106 @@ export const autonomousOps = new ClyptusAIOps({
             </div>
           </div>
 
-          {/* Right Column: Authentic Stripe High-Contrast Dark Code Terminal */}
+          {/* Right Column: Corporate Module View (Mobile) / Interactive Terminal (Desktop) */}
           <div className="lg:col-span-7">
-            <div className="bg-[#051329] rounded-2xl border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden">
+            {/* ========================================================================= */}
+            {/* MOBILE VIEW: Executive Corporate Architecture Modules (Zero CLI aesthetic) */}
+            {/* ========================================================================= */}
+            <div className="block md:hidden bg-[#081b38] rounded-2xl border border-white/10 p-4 space-y-4 shadow-2xl">
+              {/* Corporate Tabs */}
+              <div className="grid grid-cols-4 gap-1 p-1 bg-black/20 rounded-xl">
+                <button
+                  onClick={() => setActiveTab('s4hana')}
+                  className={`py-1.5 px-1 rounded-lg text-[11px] font-bold transition-all text-center ${
+                    activeTab === 's4hana'
+                      ? 'bg-[#2e3192] text-white shadow'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  Clean Core
+                </button>
+                <button
+                  onClick={() => setActiveTab('brim')}
+                  className={`py-1.5 px-1 rounded-lg text-[11px] font-bold transition-all text-center ${
+                    activeTab === 'brim'
+                      ? 'bg-[#2e3192] text-white shadow'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  BRIM Engine
+                </button>
+                <button
+                  onClick={() => setActiveTab('btp')}
+                  className={`py-1.5 px-1 rounded-lg text-[11px] font-bold transition-all text-center ${
+                    activeTab === 'btp'
+                      ? 'bg-[#2e3192] text-white shadow'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  BTP Mesh
+                </button>
+                <button
+                  onClick={() => setActiveTab('ai')}
+                  className={`py-1.5 px-1 rounded-lg text-[11px] font-bold transition-all text-center ${
+                    activeTab === 'ai'
+                      ? 'bg-[#2e3192] text-white shadow'
+                      : 'text-slate-400 hover:text-white'
+                  }`}
+                >
+                  AIOps
+                </button>
+              </div>
+
+              {/* Active Corporate Card Content */}
+              <div className="p-4 rounded-xl bg-[#051329] border border-white/10 space-y-3.5">
+                <div className="space-y-1">
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/10 text-[10px] font-bold uppercase tracking-wider text-[#ea4800]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#ea4800]" />
+                    <span>{corporateModules[activeTab].badge}</span>
+                  </div>
+                  <h3 className="text-lg font-bold text-white tracking-tight">
+                    {corporateModules[activeTab].title}
+                  </h3>
+                  <p className="text-xs text-slate-300 font-medium">
+                    {corporateModules[activeTab].tagline}
+                  </p>
+                </div>
+
+                {/* 2x2 Corporate Metrics Grid */}
+                <div className="grid grid-cols-2 gap-2 pt-1">
+                  {corporateModules[activeTab].specs.map((item, idx) => (
+                    <div key={idx} className="p-2.5 rounded-lg bg-white/5 border border-white/5">
+                      <div className="text-[10px] text-slate-400 uppercase font-semibold">{item.label}</div>
+                      <div className="text-xs font-bold text-white mt-0.5">{item.value}</div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Implementation Highlights */}
+                <div className="space-y-2 pt-2 border-t border-white/10">
+                  {corporateModules[activeTab].highlights.map((point, idx) => (
+                    <div key={idx} className="flex items-start gap-2 text-xs text-slate-200">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Live SLA & Status */}
+                <div className="pt-2 border-t border-white/10 flex items-center justify-between text-[11px]">
+                  <span className="flex items-center gap-1.5 text-emerald-400 font-medium">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                    Clean Core Validated
+                  </span>
+                  <span className="text-[#ea4800] font-bold">99.999% SLA</span>
+                </div>
+              </div>
+            </div>
+
+            {/* ========================================================================= */}
+            {/* DESKTOP VIEW: High-Contrast Technical Architecture Code Explorer         */}
+            {/* ========================================================================= */}
+            <div className="hidden md:block bg-[#051329] rounded-2xl border border-white/10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] overflow-hidden">
               
               {/* Window Header / Tabs */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between px-4 py-3 border-b border-white/10 bg-[#081b38] gap-2.5">

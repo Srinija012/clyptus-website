@@ -54,7 +54,7 @@ const CLYPTUS_LEADERS: TeamMember[] = [
     id: '6',
     name: 'Mahima Jaiswal',
     role: 'Practice Delivery Lead (Global Cloud Ops)',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80',
+    image: '/images/mahima.jpeg',
     social: {
       linkedin: 'https://www.linkedin.com/in/mahima-jaiswal-aa8a99279',
     },

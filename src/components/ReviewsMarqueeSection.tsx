@@ -122,17 +122,17 @@ const VerifiedBadge: React.FC = () => (
   </svg>
 );
 
-// Individual Testimonial Card Component (Exact replica of user's uploaded image style)
+// Individual Testimonial Card Component (Mobile-Optimized Compact & Responsive)
 const ReviewCard: React.FC<{ review: ClientReview }> = ({ review }) => {
   return (
-    <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200/90 shadow-[0_4px_20px_rgba(10,37,64,0.04)] hover:shadow-[0_12px_32px_rgba(46,49,146,0.08)] hover:border-[#2e3192]/40 transition-all w-[330px] sm:w-[380px] shrink-0 flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 border border-slate-200/90 shadow-[0_4px_16px_rgba(10,37,64,0.04)] hover:shadow-[0_12px_32px_rgba(46,49,146,0.08)] hover:border-[#2e3192]/40 transition-all w-[270px] sm:w-[340px] md:w-[380px] shrink-0 flex flex-col justify-between group">
       <div>
         {/* Top Header: Avatar + Name with Verified Badge + Handle */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
           <img
             src={review.avatar}
             alt={review.name}
-            className="w-11 h-11 rounded-full object-cover border border-slate-100 shadow-sm shrink-0"
+            className="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover border border-slate-100 shadow-sm shrink-0"
             onError={(e) => {
               // Fallback to initials avatar if image doesn't load
               const target = e.currentTarget;
@@ -143,26 +143,26 @@ const ReviewCard: React.FC<{ review: ClientReview }> = ({ review }) => {
 
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-[#0a2540] text-sm truncate group-hover:text-[#2e3192] transition-colors">
+              <span className="font-bold text-[#0a2540] text-xs sm:text-sm truncate group-hover:text-[#2e3192] transition-colors">
                 {review.name}
               </span>
               <VerifiedBadge />
             </div>
-            <div className="text-xs text-slate-500 font-mono-code truncate">
+            <div className="text-[10px] sm:text-xs text-slate-500 font-mono-code truncate">
               {review.handle}
             </div>
           </div>
         </div>
 
         {/* Review Quote - High contrast, legible typography matching image */}
-        <p className="text-xs sm:text-[13px] text-[#334155] leading-relaxed mt-3.5 font-normal">
+        <p className="text-[11px] sm:text-[13px] text-[#334155] leading-snug sm:leading-relaxed mt-2.5 sm:mt-3.5 font-normal line-clamp-4 sm:line-clamp-none">
           {review.review}
         </p>
       </div>
 
       {/* Subtle Bottom Meta Tag */}
-      <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-400 font-mono-code">
-        <span className="truncate max-w-[220px] text-slate-500 font-medium">{review.role}</span>
+      <div className="mt-3 pt-2.5 sm:mt-4 sm:pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-mono-code">
+        <span className="truncate max-w-[170px] sm:max-w-[220px] text-slate-500 font-medium">{review.role}</span>
         <span className="text-[#2e3192] font-semibold truncate shrink-0">{review.company.split(' ')[0]}</span>
       </div>
     </div>
@@ -213,21 +213,21 @@ export const ReviewsMarqueeSection: React.FC = () => {
       </div>
 
       {/* Marquee Container with pause-on-hover & Edge Gradient Masks */}
-      <div className="relative w-full overflow-hidden pause-marquee space-y-5">
+      <div className="relative w-full overflow-hidden pause-marquee space-y-3.5 sm:space-y-5">
         
         {/* Left and Right Edge Vignette Gradient Overlays */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-36 bg-gradient-to-r from-[#fafbfc] via-[#fafbfc]/90 to-transparent z-20" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-36 bg-gradient-to-l from-[#fafbfc] via-[#fafbfc]/90 to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-12 sm:w-36 bg-gradient-to-r from-[#fafbfc] via-[#fafbfc]/90 to-transparent z-20" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-12 sm:w-36 bg-gradient-to-l from-[#fafbfc] via-[#fafbfc]/90 to-transparent z-20" />
 
         {/* Row 1: Leftward Marquee */}
-        <div className="animate-marquee-scroll-left gap-5 px-2.5">
+        <div className="animate-marquee-scroll-left gap-3.5 sm:gap-5 px-1.5 sm:px-2.5">
           {row1Doubled.map((review, i) => (
             <ReviewCard key={`row1-${review.id}-${i}`} review={review} />
           ))}
         </div>
 
         {/* Row 2: Rightward (Staggered) Marquee */}
-        <div className="animate-marquee-scroll-right gap-5 px-2.5">
+        <div className="animate-marquee-scroll-right gap-3.5 sm:gap-5 px-1.5 sm:px-2.5">
           {row2Doubled.map((review, i) => (
             <ReviewCard key={`row2-${review.id}-${i}`} review={review} />
           ))}

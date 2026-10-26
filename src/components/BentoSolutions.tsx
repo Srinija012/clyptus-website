@@ -244,16 +244,16 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
           Row 2: Card 3 (Oracle, 4 cols) + Card 4 (AI, 4 cols) + Card 5 (Smart Factory, 4 cols)
           Row 3: Card 6 (Connect equivalent / Cloud Mesh, 12 cols / 100% full width)
           
-          Mobile: Responsive 2-column bento formation with minimal tight spacing (gap-2.5 sm:gap-4 lg:gap-5)
+          Mobile: Clean single column with uncropped cards and comfortable reading room (gap-4 sm:gap-5)
         */}
-        <div className="grid grid-cols-2 lg:grid-cols-12 gap-2.5 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-4 sm:gap-5">
           
           {/* ========================================================================= */}
           {/* CARD 1: Payments Equivalent -> SAP S/4HANA & Clean Core (8 cols / 66.6%) */}
           {/* ========================================================================= */}
           <div 
             onClick={() => setSelectedSolution(solutions.sap)}
-            className="group relative col-span-2 lg:col-span-8 rounded-[22px] bg-white p-5 sm:p-7 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
+            className="group relative col-span-1 md:col-span-2 lg:col-span-8 rounded-[22px] bg-white p-5 sm:p-7 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
           >
             {/* Stripe Radial Hover Glow */}
             <div className="absolute inset-0 rounded-[22px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(46,49,146,0.06),transparent_70%)]" />
@@ -334,7 +334,7 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
           {/* ========================================================================= */}
           <div 
             onClick={() => setSelectedSolution(solutions.brim)}
-            className="group relative col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
+            className="group relative col-span-1 md:col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
           >
             <div className="absolute inset-0 rounded-[22px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(0,212,255,0.06),transparent_70%)]" />
 
@@ -391,8 +391,8 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
                 alt="SAP BRIM Invoicing" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2">
-                <span className="text-[10px] font-mono-code text-cyan-200 font-bold truncate">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2.5">
+                <span className="text-[11px] font-mono-code text-cyan-200 font-bold leading-tight">
                   FI-CA High-Volume Subledgers
                 </span>
               </div>
@@ -404,7 +404,7 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
           {/* ========================================================================= */}
           <div 
             onClick={() => setSelectedSolution(solutions.oracle)}
-            className="group relative col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
+            className="group relative col-span-1 md:col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
           >
             <div className="absolute inset-0 rounded-[22px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(234,72,0,0.06),transparent_70%)]" />
 
@@ -449,8 +449,8 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
                 alt="Oracle Fusion ERP Cloud" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2">
-                <span className="text-[10px] font-mono-code text-amber-200 font-bold truncate">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2.5">
+                <span className="text-[11px] font-mono-code text-amber-200 font-bold leading-tight">
                   Dubai & USA Modernization Practice
                 </span>
               </div>
@@ -462,7 +462,7 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
           {/* ========================================================================= */}
           <div 
             onClick={() => setSelectedSolution(solutions.ai)}
-            className="group relative col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
+            className="group relative col-span-1 md:col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
           >
             <div className="absolute inset-0 rounded-[22px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(121,40,202,0.06),transparent_70%)]" />
 
@@ -507,8 +507,8 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
                 alt="AI-Driven Operations Automation" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2">
-                <span className="text-[10px] font-mono-code text-purple-200 font-bold truncate">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2.5">
+                <span className="text-[11px] font-mono-code text-purple-200 font-bold leading-tight">
                   SAP Joule Copilot & Incident Radar
                 </span>
               </div>
@@ -520,7 +520,7 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
           {/* ========================================================================= */}
           <div 
             onClick={() => setSelectedSolution(solutions.manufacturing)}
-            className="group relative col-span-2 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
+            className="group relative col-span-1 md:col-span-1 lg:col-span-4 rounded-[22px] bg-white p-4 sm:p-6 border border-slate-200/90 stripe-card-shadow flex flex-col justify-between overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
           >
             <div className="absolute inset-0 rounded-[22px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(5,150,105,0.06),transparent_70%)]" />
 
@@ -565,8 +565,8 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
                 alt="Smart Factory & Supply Chain Automation" 
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2">
-                <span className="text-[10px] font-mono-code text-emerald-200 font-bold truncate">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/80 to-transparent flex items-end p-2.5">
+                <span className="text-[11px] font-mono-code text-emerald-200 font-bold leading-tight">
                   SAP DMC & Connected SCM Integration
                 </span>
               </div>
@@ -578,7 +578,7 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
           {/* ========================================================================= */}
           <div 
             onClick={() => setSelectedSolution(solutions.cloud)}
-            className="group relative col-span-2 lg:col-span-12 rounded-[22px] bg-white p-5 sm:p-7 border border-slate-200/90 stripe-card-shadow flex flex-col lg:flex-row items-center justify-between gap-6 overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
+            className="group relative col-span-1 md:col-span-2 lg:col-span-12 rounded-[22px] bg-white p-5 sm:p-7 border border-slate-200/90 stripe-card-shadow flex flex-col lg:flex-row items-center justify-between gap-6 overflow-hidden cursor-pointer hover:border-slate-300 transition-all duration-300"
           >
             <div className="absolute inset-0 rounded-[22px] pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_var(--mouse-x,50%)_var(--mouse-y,50%),rgba(46,49,146,0.06),transparent_70%)]" />
 

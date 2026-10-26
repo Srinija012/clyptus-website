@@ -75,24 +75,37 @@
   transform: translateY(-4px);
 }
 
-/* Stripe Perspective Floating Card */
+/* Stripe Perspective Floating Card (Flat & Stable on Mobile, 3D on Desktop) */
 .stripe-perspective-container {
-  perspective: 1200px;
+  perspective: none;
 }
 
 .stripe-floating-card {
-  transform: rotateY(-8deg) rotateX(4deg) translateZ(0);
+  transform: none;
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
-  box-shadow: 0 50px 100px -20px rgba(46, 49, 146, 0.18), 
-              0 30px 60px -30px rgba(0, 0, 0, 0.22), 
+  box-shadow: 0 10px 25px -5px rgba(46, 49, 146, 0.08), 
+              0 8px 10px -6px rgba(0, 0, 0, 0.04), 
               0 0 0 1px rgba(46, 49, 146, 0.08);
 }
 
-.stripe-floating-card:hover {
-  transform: rotateY(-2deg) rotateX(1deg) translateY(-6px) translateZ(10px);
-  box-shadow: 0 60px 120px -20px rgba(46, 49, 146, 0.25), 
-              0 36px 72px -30px rgba(0, 0, 0, 0.28), 
-              0 0 0 1px rgba(234, 72, 0, 0.3);
+@media (min-width: 1024px) {
+  .stripe-perspective-container {
+    perspective: 1200px;
+  }
+
+  .stripe-floating-card {
+    transform: rotateY(-8deg) rotateX(4deg) translateZ(0);
+    box-shadow: 0 50px 100px -20px rgba(46, 49, 146, 0.18), 
+                0 30px 60px -30px rgba(0, 0, 0, 0.22), 
+                0 0 0 1px rgba(46, 49, 146, 0.08);
+  }
+
+  .stripe-floating-card:hover {
+    transform: rotateY(-2deg) rotateX(1deg) translateY(-6px) translateZ(10px);
+    box-shadow: 0 60px 120px -20px rgba(46, 49, 146, 0.25), 
+                0 36px 72px -30px rgba(0, 0, 0, 0.28), 
+                0 0 0 1px rgba(234, 72, 0, 0.3);
+  }
 }
 
 /* Stripe Dark Section Card */

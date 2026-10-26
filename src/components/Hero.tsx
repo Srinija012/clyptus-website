@@ -126,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
       name: 'HCL Technologies',
       tag: 'Engineering R&D',
       domain: 'Global Enterprise Tech',
-      logo: '/logos/marquee/16.png',
+      logo: '/logos/clean/16.png',
       alt: 'HCL Technologies'
     },
     {
@@ -161,7 +161,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
       name: 'neev SYSTEMS',
       tag: 'Cloud Modernization',
       domain: 'Next-Gen IT Delivery',
-      logo: '/logos/marquee/20.png',
+      logo: '/logos/clean/20.png',
       alt: 'neev SYSTEMS'
     }
   ];
@@ -179,12 +179,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           <div className="lg:col-span-7 space-y-5 text-left">
             
             {/* Corporate Badge */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-300/80 shadow-sm">
-              <span className="w-2 h-2 rounded-full bg-emerald-600" />
-              <span className="text-xs font-semibold text-[#0a2540]">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-white border border-slate-300/80 shadow-sm max-w-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
+              <span className="text-[11px] sm:text-xs font-semibold text-[#0a2540] truncate">
                 Enterprise Systems Partner · India · UAE · USA
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider text-[#ea4800] bg-[#ea4800]/10 px-2 py-0.5 rounded-full">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#ea4800] bg-[#ea4800]/10 px-2 py-0.5 rounded-full shrink-0">
                 10+ Years
               </span>
             </div>
@@ -254,22 +254,25 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           <div className="lg:col-span-5 w-full stripe-perspective-container">
             <div className="w-full max-w-lg mx-auto bg-white rounded-3xl p-5 sm:p-6 stripe-floating-card border border-slate-200 shadow-xl">
               
-              {/* Card Header Bar */}
+              {/* Card Header Bar: Executive Corporate Status */}
               <div className="flex items-center justify-between pb-3.5 border-b border-slate-200/80">
                 <div className="flex items-center gap-2">
-                  <div className="flex gap-1.5">
+                  <div className="hidden sm:flex gap-1.5">
                     <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
                     <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
                     <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
                   </div>
-                  <span className="text-xs font-mono-code text-[#475569] font-bold ml-1.5">
-                    clyptus.telemetry.mesh
-                  </span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="w-2 h-2 rounded-full bg-[#2e3192] sm:hidden" />
+                    <span className="text-xs font-semibold text-[#0a2540]">
+                      Enterprise Telemetry Matrix
+                    </span>
+                  </div>
                 </div>
 
                 <div className="flex items-center gap-1.5 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
                   <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                  <span className="text-[10px] font-mono-code text-emerald-800 font-bold">99.999% SLA</span>
+                  <span className="text-[10px] font-bold text-emerald-800">99.999% SLA</span>
                 </div>
               </div>
 
@@ -473,6 +476,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                         alt={client.alt} 
                         className="max-h-6 sm:max-h-7 max-w-full w-auto object-contain filter grayscale-[25%] opacity-85 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-300"
                         loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLElement).style.display = 'none';
+                        }}
                       />
                     </div>
                     {/* Visual Hierarchy Stack */}
@@ -505,6 +511,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                         alt={client.alt} 
                         className="max-h-6 sm:max-h-7 max-w-full w-auto object-contain filter grayscale-[25%] opacity-85 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-300"
                         loading="lazy"
+                        onError={(e) => {
+                          (e.currentTarget as HTMLElement).style.display = 'none';
+                        }}
                       />
                     </div>
                     {/* Visual Hierarchy Stack */}
