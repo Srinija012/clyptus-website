@@ -5,11 +5,7 @@ import {
   ArrowRight, 
   Search, 
   ChevronRight, 
-  X,
-  Sparkles,
-  Terminal,
-  Layers,
-  ArrowUpRight
+  X
 } from 'lucide-react';
 
 interface BlogPageProps {
@@ -241,7 +237,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenContact }) => {
               </div>
             </div>
 
-            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white group-hover:text-[#00d4ff] transition-colors leading-tight">
+            <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white group-hover:text-[#ea4800] transition-colors leading-tight">
               {articles[0].title}
             </h2>
 

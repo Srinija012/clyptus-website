@@ -309,7 +309,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onOpenContact })
       {/* 3. Global Delivery Callout Banner (Stripe Dark Mesh) */}
       <section className="mt-16 mx-4 sm:mx-6 lg:mx-8 rounded-3xl overflow-hidden stripe-mesh-dark text-white border border-white/10 shadow-2xl relative">
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-20 text-center space-y-6 relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-mono-code font-bold text-[#00d4ff] uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-mono-code font-bold text-[#ea4800] uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5 text-[#ea4800]" />
             Global Domain Competence
           </div>

@@ -420,10 +420,23 @@ function pump() {
         head.done(c)
       }
     }
-    if (queue.length) requestAnimationFrame(tick)
-    else pumping = false
+    if (queue.length) {
+      if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
+        window.requestAnimationFrame(tick)
+      } else if (typeof globalThis !== 'undefined' && typeof globalThis.requestAnimationFrame === 'function') {
+        globalThis.requestAnimationFrame(tick)
+      } else {
+        setTimeout(tick, 16)
+      }
+    } else pumping = false
   }
-  requestAnimationFrame(tick)
+  if (typeof window !== 'undefined' && typeof window.requestAnimationFrame === 'function') {
+    window.requestAnimationFrame(tick)
+  } else if (typeof globalThis !== 'undefined' && typeof globalThis.requestAnimationFrame === 'function') {
+    globalThis.requestAnimationFrame(tick)
+  } else {
+    setTimeout(tick, 16)
+  }
 }
 
 /** Lower priority paints first: back panels (0) before the files tucked behind glass (1). */

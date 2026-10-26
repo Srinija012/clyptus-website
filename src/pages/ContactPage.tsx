@@ -4,11 +4,8 @@ import {
   Mail, 
   CheckCircle2, 
   ShieldCheck, 
-  Send,
-  Clock,
-  MapPin,
-  Sparkles,
-  Lock,
+  MapPin, 
+  Sparkles, 
   ArrowRight
 } from 'lucide-react';
 

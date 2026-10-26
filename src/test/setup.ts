@@ -1,6 +1,23 @@
 import '@testing-library/jest-dom/vitest';
+import React from 'react';
+import { vi } from 'vitest';
 
-// Polyfill ImageData if not present in jsdom
+vi.mock('../components/StripeHeroCanvas', () => ({
+  StripeHeroCanvas: () => React.createElement('div', { 'data-testid': 'stripe-hero-canvas' })
+}));
+vi.mock('../components/StripeGlobe', () => ({
+  StripeGlobe: () => React.createElement('div', { 'data-testid': 'stripe-globe' })
+}));
+
+// Polyfill requestAnimationFrame for jsdom test runner
+globalThis.requestAnimationFrame = (cb: FrameRequestCallback) => {
+  return setTimeout(() => cb(Date.now()), 0) as unknown as number;
+};
+globalThis.cancelAnimationFrame = (id: number) => clearTimeout(id);
+if (typeof window !== 'undefined') {
+  window.requestAnimationFrame = globalThis.requestAnimationFrame;
+  window.cancelAnimationFrame = globalThis.cancelAnimationFrame;
+}
 if (typeof globalThis.ImageData === 'undefined') {
   globalThis.ImageData = class ImageData {
     data: Uint8ClampedArray;
@@ -27,6 +44,8 @@ if (typeof window !== 'undefined' && typeof (window as any).ImageData === 'undef
 // Mock scrollTo and canvas for jsdom
 if (typeof window !== 'undefined') {
   window.scrollTo = () => {};
+  window.requestAnimationFrame = (cb) => setTimeout(cb, 100) as unknown as number;
+  window.cancelAnimationFrame = (id) => clearTimeout(id);
   window.HTMLCanvasElement.prototype.getContext = (() => {
     return {
       fillRect: () => {},

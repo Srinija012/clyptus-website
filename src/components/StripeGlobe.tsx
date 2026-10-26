@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
-import rawDots from '../data/globeLandDots.json';
+import rawDots from '../data/globeLandDots';
 import { MapPin, Building2, Globe2 } from 'lucide-react';
 
 export interface BranchLocation {

@@ -1,9 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import App from '../App';
 import GlassFolderCardsDemo from '../components/ui/demo';
 import { EnterpriseArchitectureDossiers } from '../components/EnterpriseArchitectureDossiers';
+import { ReviewsMarqueeSection } from '../components/ReviewsMarqueeSection';
 
 describe('Clyptus Stripe-Grade Enterprise App', () => {
 
@@ -23,13 +23,12 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
     expect(screen.getByText('330+')).toBeInTheDocument();
   });
 
-  it('switches Hero telemetry console tabs on user click', async () => {
-    const user = userEvent.setup();
+  it('switches Hero telemetry console tabs on user click', () => {
     render(<App />);
 
     // Click on BRIM tab in Hero Console
     const brimTab = screen.getByRole('button', { name: 'BRIM' });
-    await user.click(brimTab);
+    fireEvent.click(brimTab);
 
     // Should display BRIM-specific metrics
     expect(screen.getByText(/high-volume subscription billing/i)).toBeInTheDocument();
@@ -41,13 +40,12 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
     expect(screen.getByText('Ledger & Incident Telemetry')).toBeInTheDocument();
   });
 
-  it('switches Architecture spec tabs and displays code', async () => {
-    const user = userEvent.setup();
+  it('switches Architecture spec tabs and displays code', () => {
     render(<App />);
 
     // Click on SAP_BRIM_Engine.ts tab
     const brimCodeTab = screen.getByRole('button', { name: 'SAP_BRIM_Engine.ts' });
-    await user.click(brimCodeTab);
+    fireEvent.click(brimCodeTab);
 
     expect(screen.getByText(/ConvergentCharging/i)).toBeInTheDocument();
     expect(screen.getByText(/10,000,000 events \/ hr/i)).toBeInTheDocument();
@@ -77,8 +75,7 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
     expect(screen.getAllByRole('link', { name: /policies/i }).length).toBeGreaterThanOrEqual(1);
   });
 
-  it('renders interactive Enterprise ROI calculator and trust certifications', async () => {
-    const user = userEvent.setup();
+  it('renders interactive Enterprise ROI calculator and trust certifications', () => {
     render(<App />);
 
     // Check ROI Estimator presence
@@ -87,7 +84,7 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
 
     // Check switching workload in calculator
     const s4hanaWorkloadBtn = screen.getByRole('button', { name: /s\/4hana clean core erp/i });
-    await user.click(s4hanaWorkloadBtn);
+    fireEvent.click(s4hanaWorkloadBtn);
     expect(screen.getByText('99.4%')).toBeInTheDocument();
 
     // Check Trust & Security Certifications
@@ -110,8 +107,7 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
     expect(screen.getByText('Archives')).toBeInTheDocument();
   });
 
-  it('renders interactive TeamShowcase in Leadership section and supports mobile click/hover', async () => {
-    const user = userEvent.setup();
+  it('renders interactive TeamShowcase in Leadership section and supports mobile click/hover', () => {
     render(<App />);
 
     // Check leadership heading
@@ -121,7 +117,7 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
 
     // Verify clicking/tapping a team member row activates them (mobile/touch support)
     const vamsiRow = screen.getByRole('button', { name: /view details for vamsi krishna/i });
-    await user.click(vamsiRow);
+    fireEvent.click(vamsiRow);
 
     // Social links become interactive
     const linkedinLinks = screen.getAllByTitle('LinkedIn');
@@ -129,12 +125,12 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
 
     // Verify clicking a photo card activates member
     const sridharCard = screen.getByRole('button', { name: /select sridhar pinnapureddy/i });
-    await user.click(sridharCard);
+    fireEvent.click(sridharCard);
     expect(screen.getAllByText('Sridhar Pinnapureddy').length).toBeGreaterThanOrEqual(1);
   });
 
   it('renders Reviews marquee section with verified client quotes and images from original site', () => {
-    render(<App />);
+    render(<ReviewsMarqueeSection />);
 
     // Official trust badge from original site
     expect(screen.getByText(/97% Client Satisfaction · 1,313\+ Positive Reviews/i)).toBeInTheDocument();
@@ -173,6 +169,11 @@ describe('Clyptus Stripe-Grade Enterprise App', () => {
     // Trust badge pillars
     expect(screen.getByText(/Fortune 500 & Global Conglomerates/i)).toBeInTheDocument();
     expect(screen.getByText(/Zero Core Degradation Architecture/i)).toBeInTheDocument();
+  });
+
+  it('renders giant CLYPTUS display typography in the footer bottom right area', () => {
+    render(<App />);
+    expect(screen.getByText('CLYPTUS')).toBeInTheDocument();
   });
 
 });

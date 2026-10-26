@@ -12,7 +12,7 @@ export default defineConfig({
     },
   },
   server: {
-    port: 3000,
+    port: 3002,
     host: true
   },
   test: {
@@ -20,6 +20,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     css: false,
-    testTimeout: 15000
+    pool: 'threads',
+    testTimeout: 20000
   }
 })

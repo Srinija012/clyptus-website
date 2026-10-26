@@ -336,7 +336,7 @@ export const CareersPage: React.FC<CareersPageProps> = ({ onOpenContact }) => {
       <section className="mt-16 mx-4 sm:mx-6 lg:mx-8 rounded-3xl overflow-hidden stripe-mesh-dark text-white border border-white/10 shadow-2xl relative">
         <div className="max-w-5xl mx-auto px-6 py-16 sm:py-20 space-y-8 relative z-10">
           <div className="text-center space-y-3">
-            <span className="text-xs font-mono-code uppercase tracking-widest text-[#00d4ff] bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-full">
+            <span className="text-xs font-mono-code uppercase tracking-widest text-[#ea4800] bg-orange-500/10 border border-orange-500/20 px-3 py-1 rounded-full">
               University Relations & Junior Program
             </span>
             <h2 className="text-3xl sm:text-5xl font-light tracking-tight">
@@ -351,7 +351,7 @@ export const CareersPage: React.FC<CareersPageProps> = ({ onOpenContact }) => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-2 hover:border-white/20 transition-all">
-              <span className="text-xs font-mono-code text-[#00d4ff] font-bold">STAGE 01</span>
+              <span className="text-xs font-mono-code text-[#ea4800] font-bold">STAGE 01</span>
               <h4 className="text-lg font-bold text-white">Foundation Sprint (Month 1-2)</h4>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Relational schemas, ABAP modern syntax, RESTful APIs, Git workflows, and enterprise Clean Core standards.
@@ -359,7 +359,7 @@ export const CareersPage: React.FC<CareersPageProps> = ({ onOpenContact }) => {
             </div>
 
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-2 hover:border-white/20 transition-all">
-              <span className="text-xs font-mono-code text-[#00d4ff] font-bold">STAGE 02</span>
+              <span className="text-xs font-mono-code text-[#ea4800] font-bold">STAGE 02</span>
               <h4 className="text-lg font-bold text-white">Sandbox Delivery (Month 3-4)</h4>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Deploying real OData microservices on SAP BTP and integrating Oracle Cloud test harnesses with mock data.
@@ -367,7 +367,7 @@ export const CareersPage: React.FC<CareersPageProps> = ({ onOpenContact }) => {
             </div>
 
             <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm space-y-2 hover:border-white/20 transition-all">
-              <span className="text-xs font-mono-code text-[#00d4ff] font-bold">STAGE 03</span>
+              <span className="text-xs font-mono-code text-[#ea4800] font-bold">STAGE 03</span>
               <h4 className="text-lg font-bold text-white">Shadow Production (Month 5-6)</h4>
               <p className="text-xs text-slate-300 leading-relaxed">
                 Shadowing Lead Architects on live multinational client projects with direct code reviews and PR gating.

@@ -11,7 +11,7 @@ import {
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="relative bg-[#f6f9fc] border-t border-slate-200/80 text-[#425466] text-xs">
+    <footer className="relative bg-[#f6f9fc] border-t border-slate-200/80 text-[#425466] text-xs overflow-hidden">
       
       {/* =========================================================================
           1. MOBILE COMPACT FOOTER (Max ~Half Screen Height, Zero Endless Scrolling)
@@ -199,8 +199,18 @@ export const Footer: React.FC = () => {
 
         </div>
 
+        {/* Giant "CLYPTUS" Typography in Bottom Right White Space */}
+        <div 
+          aria-hidden="true" 
+          className="flex justify-end pt-6 sm:pt-8 pb-1 pointer-events-none select-none overflow-hidden"
+        >
+          <span className="font-black text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] 2xl:text-[11.5rem] tracking-tighter leading-none text-slate-200/90 select-none uppercase">
+            CLYPTUS
+          </span>
+        </div>
+
         {/* Desktop Bottom Bar */}
-        <div className="pt-8 mt-12 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-6 mt-6 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div>
             <span>© {new Date().getFullYear()} Clyptus Software Solutions Private Limited. All rights reserved.</span>
           </div>
