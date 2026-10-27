@@ -497,11 +497,11 @@ export const StripeGlobe: React.FC = () => {
       </div>
 
       {/* Top Floating Badge info bar showing active branch coordinates and location type */}
-      <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-sm text-xs font-mono-code">
-          <Globe2 className="w-3.5 h-3.5 text-[#2e3192]" />
-          <span className="font-extrabold text-[#0a2540]">{activeBranch.locationType}:</span>
-          <span className="text-[#2e3192] font-bold">{activeBranch.coordsFormatted}</span>
+      <div className="absolute top-3 sm:top-4 left-3 sm:left-4 right-3 sm:right-4 flex items-center justify-between pointer-events-none">
+        <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 rounded-xl bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-sm text-[10px] sm:text-xs font-mono-code max-w-full">
+          <Globe2 className="w-3.5 h-3.5 text-[#2e3192] shrink-0" />
+          <span className="font-extrabold text-[#0a2540] truncate">{activeBranch.locationType}:</span>
+          <span className="text-[#2e3192] font-bold shrink-0">{activeBranch.coordsFormatted}</span>
         </div>
         <div className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/85 backdrop-blur-md border border-slate-200/80 shadow-sm text-[11px] font-mono-code text-[#475569]">
           <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />

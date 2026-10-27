@@ -226,10 +226,10 @@ The Internal Complaints Committee (ICC) meets quarterly to review workplace safe
                             {policy.version}
                           </span>
                         </div>
-                        <h4 className="text-sm font-bold text-[#0a2540] truncate">
+                        <h4 className="text-sm font-bold text-[#0a2540] leading-snug">
                           {policy.title}
                         </h4>
-                        <p className="text-xs text-slate-500 line-clamp-1 leading-relaxed">
+                        <p className="text-xs text-slate-500 leading-relaxed">
                           {policy.summary}
                         </p>
                       </div>

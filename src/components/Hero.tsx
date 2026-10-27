@@ -181,8 +181,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             {/* Corporate Badge */}
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-white border border-slate-300/80 shadow-sm max-w-full">
               <span className="w-2 h-2 rounded-full bg-emerald-600 shrink-0" />
-              <span className="text-[11px] sm:text-xs font-semibold text-[#0a2540] truncate">
-                Enterprise Systems Partner · India · UAE · USA
+              <span className="text-[10.5px] sm:text-xs font-semibold text-[#0a2540]">
+                <span className="sm:hidden">Enterprise Partner · India · UAE · USA</span>
+                <span className="hidden sm:inline">Enterprise Systems Partner · India · UAE · USA</span>
               </span>
               <span className="text-[10px] font-bold uppercase tracking-wider text-[#ea4800] bg-[#ea4800]/10 px-2 py-0.5 rounded-full shrink-0">
                 10+ Years
@@ -190,7 +191,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </div>
 
             {/* Main Headline (High Contrast, Eye-Soothing Display) */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-light tracking-[-0.03em] text-[#0a2540] leading-[1.12]">
+            <h1 className="text-3xl min-[400px]:text-4xl sm:text-5xl lg:text-6xl font-light tracking-[-0.03em] text-[#0a2540] leading-[1.12]">
               Enterprise infrastructure for{' '}
               <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#2e3192] via-[#1e2270] to-[#ea4800]">
                 SAP, Oracle & AI
@@ -206,7 +207,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-row items-center gap-2.5 sm:gap-4 pt-1 w-full sm:w-auto">
+            <div className="flex flex-col min-[380px]:flex-row items-stretch min-[380px]:items-center gap-2.5 sm:gap-4 pt-1 w-full sm:w-auto">
               <button
                 onClick={onOpenContact}
                 className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 sm:gap-2 px-6 sm:px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold text-white bg-[#ea4800] hover:bg-[#d03f00] shadow-md shadow-orange-500/20 hover:shadow-lg transition-all duration-200 active:scale-95 whitespace-nowrap"
@@ -280,7 +281,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
               <div className="grid grid-cols-4 gap-1 p-1 bg-slate-100 rounded-xl my-3 text-xs">
                 <button
                   onClick={() => setActiveConsoleTab('s4hana')}
-                  className={`py-1.5 px-2 font-bold rounded-lg transition-all ${
+                  className={`py-1.5 px-1 sm:px-2 text-[10.5px] sm:text-xs font-bold rounded-lg transition-all text-center truncate ${
                     activeConsoleTab === 's4hana'
                       ? 'bg-white text-[#0a2540] shadow-sm'
                       : 'text-slate-600 hover:text-[#0a2540]'
@@ -290,7 +291,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 </button>
                 <button
                   onClick={() => setActiveConsoleTab('brim')}
-                  className={`py-1.5 px-2 font-bold rounded-lg transition-all ${
+                  className={`py-1.5 px-1 sm:px-2 text-[10.5px] sm:text-xs font-bold rounded-lg transition-all text-center truncate ${
                     activeConsoleTab === 'brim'
                       ? 'bg-white text-[#0a2540] shadow-sm'
                       : 'text-slate-600 hover:text-[#0a2540]'
@@ -300,7 +301,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 </button>
                 <button
                   onClick={() => setActiveConsoleTab('oracle')}
-                  className={`py-1.5 px-2 font-bold rounded-lg transition-all ${
+                  className={`py-1.5 px-1 sm:px-2 text-[10.5px] sm:text-xs font-bold rounded-lg transition-all text-center truncate ${
                     activeConsoleTab === 'oracle'
                       ? 'bg-white text-[#0a2540] shadow-sm'
                       : 'text-slate-600 hover:text-[#0a2540]'
@@ -310,7 +311,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
                 </button>
                 <button
                   onClick={() => setActiveConsoleTab('ai')}
-                  className={`py-1.5 px-2 font-bold rounded-lg transition-all ${
+                  className={`py-1.5 px-1 sm:px-2 text-[10.5px] sm:text-xs font-bold rounded-lg transition-all text-center truncate ${
                     activeConsoleTab === 'ai'
                       ? 'bg-white text-[#0a2540] shadow-sm'
                       : 'text-slate-600 hover:text-[#0a2540]'
@@ -439,12 +440,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenContact }) => {
           
           {/* Header & Hierarchy */}
           <div className="text-center max-w-3xl mx-auto space-y-2.5 mb-8">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/90 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[11px] font-mono-code font-bold uppercase tracking-wider text-[#0a2540]">
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 rounded-full bg-white border border-slate-200/90 shadow-sm max-w-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+              <span className="text-[10px] sm:text-[11px] font-mono-code font-bold uppercase tracking-wider text-[#0a2540]">
                 Enterprise Platform Ecosystem
               </span>
-              <span className="text-[10px] font-mono-code text-[#64748b] border-l border-slate-200 pl-2">
+              <span className="hidden sm:inline text-[10px] font-mono-code text-[#64748b] border-l border-slate-200 pl-2">
                 Strategic Client & Partner Network
               </span>
             </div>

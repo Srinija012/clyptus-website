@@ -47,20 +47,20 @@ export const StatsStrip: React.FC = () => {
           </h3>
         </div>
 
-        {/* Monochromatic High-End Stripe Proof Grid with Hairline Dividers */}
-        <div className="bg-white rounded-2xl p-4 sm:p-6 border border-slate-200/80 stripe-card-shadow grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 divide-y sm:divide-y-0 sm:divide-x divide-slate-200/70">
+        {/* High-End Stripe Proof Grid with Balanced Mobile Tiles & Desktop Hairline Dividers */}
+        <div className="bg-white rounded-2xl p-3 sm:p-6 border border-slate-200/80 stripe-card-shadow grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-0 sm:divide-x sm:divide-y-0 divide-slate-200/70">
           {stats.map((stat, i) => (
             <div 
               key={i} 
-              className="px-4 py-3 sm:py-2 text-center flex flex-col justify-center items-center group"
+              className="p-3 sm:px-4 sm:py-2 rounded-xl sm:rounded-none bg-[#f8fafc]/90 sm:bg-transparent border sm:border-0 border-slate-100/90 text-center flex flex-col justify-center items-center group transition-colors"
             >
-              <div className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#0a2540] group-hover:text-[#2e3192] transition-colors font-mono-code">
+              <div className="text-2xl sm:text-4xl font-extrabold tracking-tight text-[#0a2540] group-hover:text-[#2e3192] transition-colors font-mono-code">
                 {stat.value}
               </div>
-              <div className="text-xs sm:text-sm font-bold text-[#0a2540] mt-1.5 leading-snug">
+              <div className="text-xs sm:text-sm font-bold text-[#0a2540] mt-1 sm:mt-1.5 leading-snug">
                 {stat.label}
               </div>
-              <div className="text-[11px] text-[#627d98] mt-0.5 font-normal">
+              <div className="text-[10.5px] sm:text-[11px] text-[#627d98] mt-0.5 font-normal leading-tight">
                 {stat.subtext}
               </div>
             </div>

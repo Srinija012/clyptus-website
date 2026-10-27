@@ -181,7 +181,7 @@ export const IndustriesSection: React.FC<IndustriesSectionProps> = ({ onOpenCont
                     {ind.name}
                   </h3>
 
-                  <p className="text-xs text-[#425466] leading-relaxed line-clamp-2">
+                  <p className="text-xs text-[#425466] leading-relaxed">
                     {ind.desc}
                   </p>
                 </div>

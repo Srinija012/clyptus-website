@@ -175,7 +175,7 @@ export const BlogSection: React.FC = () => {
 
         {/* Responsive Cards Container: Full-width on mobile (<md), Expandable Accordion on desktop (>=md) */}
         <div 
-          className="relative w-full h-[360px] sm:h-[400px] md:h-[460px] flex gap-2 md:gap-3.5 select-none overflow-hidden"
+          className="relative w-full h-[320px] sm:h-[400px] md:h-[460px] flex gap-2 md:gap-3.5 select-none overflow-hidden"
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd}
         >
@@ -221,8 +221,8 @@ export const BlogSection: React.FC = () => {
                   <div className="absolute inset-0 p-5 sm:p-7 md:p-8 flex flex-col justify-between z-10 animate-in fade-in duration-300">
                     {/* Top pill badge */}
                     <div className="flex items-center justify-between gap-2">
-                      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-xs font-medium tracking-wide shadow-sm max-w-[85%] truncate">
-                        <span className="truncate">{item.category}</span>
+                      <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white/20 backdrop-blur-md border border-white/25 text-white text-[11px] sm:text-xs font-medium tracking-wide shadow-sm max-w-[80%] sm:max-w-none">
+                        <span>{item.category}</span>
                         <span className="text-white/60 shrink-0">•</span>
                         <span className="shrink-0">{item.readTime}</span>
                       </div>
@@ -235,7 +235,7 @@ export const BlogSection: React.FC = () => {
                     {/* Bottom Left Title & Bottom Right Stripe-Style Parallelogram Glyph */}
                     <div className="flex items-end justify-between gap-3">
                       <div className="max-w-xl">
-                        <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold md:font-normal text-white tracking-tight leading-[1.15] drop-shadow-md">
+                        <h3 className="text-xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold md:font-normal text-white tracking-tight leading-[1.15] drop-shadow-md">
                           {item.cardTitle}
                         </h3>
                       </div>

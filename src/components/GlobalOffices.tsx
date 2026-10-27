@@ -110,25 +110,25 @@ export const GlobalOffices: React.FC = () => {
             </div>
 
             {/* Stripe-style 2x2 Telemetry Metric Highlights */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-2 gap-2.5 sm:gap-4 pt-2">
               {stripeStats.map((stat, i) => {
                 const IconComponent = stat.icon;
                 return (
                   <div
                     key={i}
-                    className="p-4 rounded-xl bg-[#f8fafc] border border-slate-200/90 hover:border-[#2e3192]/40 hover:bg-white transition-all shadow-[0_2px_8px_rgba(10,37,64,0.03)]"
+                    className="p-3 sm:p-4 rounded-xl bg-[#f8fafc] border border-slate-200/90 hover:border-[#2e3192]/40 hover:bg-white transition-all shadow-[0_2px_8px_rgba(10,37,64,0.03)]"
                   >
-                    <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center justify-between mb-1.5 sm:mb-2">
                       <IconComponent className="w-4 h-4 text-[#2e3192]" />
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     </div>
-                    <div className="text-2xl font-extrabold text-[#0a2540] tracking-tight font-mono-code">
+                    <div className="text-xl sm:text-2xl font-extrabold text-[#0a2540] tracking-tight font-mono-code">
                       {stat.value}
                     </div>
-                    <div className="text-xs font-bold text-[#0a2540] mt-0.5">
+                    <div className="text-xs font-bold text-[#0a2540] mt-0.5 leading-snug">
                       {stat.label}
                     </div>
-                    <div className="text-[11px] text-[#64748b] mt-0.5 leading-snug">
+                    <div className="text-[10.5px] sm:text-[11px] text-[#64748b] mt-0.5 leading-tight">
                       {stat.desc}
                     </div>
                   </div>

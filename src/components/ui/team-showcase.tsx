@@ -92,7 +92,7 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS, className }: T
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[84px] h-[92px] sm:w-[130px] sm:h-[140px] md:w-[155px] md:h-[165px]"
+              className="w-[78px] min-[360px]:w-[84px] h-[86px] min-[360px]:h-[92px] sm:w-[130px] sm:h-[140px] md:w-[155px] md:h-[165px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
               onSelect={handleSelect}
@@ -101,12 +101,12 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS, className }: T
         </div>
 
         {/* Column 2 */}
-        <div className="flex flex-col gap-2 sm:gap-2.5 md:gap-3 mt-[32px] sm:mt-[56px] md:mt-[68px]">
+        <div className="flex flex-col gap-2 sm:gap-2.5 md:gap-3 mt-[24px] min-[360px]:mt-[32px] sm:mt-[56px] md:mt-[68px]">
           {col2.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[94px] h-[102px] sm:w-[145px] sm:h-[155px] md:w-[172px] md:h-[182px]"
+              className="w-[86px] min-[360px]:w-[94px] h-[94px] min-[360px]:h-[102px] sm:w-[145px] sm:h-[155px] md:w-[172px] md:h-[182px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
               onSelect={handleSelect}
@@ -115,12 +115,12 @@ export default function TeamShowcase({ members = DEFAULT_MEMBERS, className }: T
         </div>
 
         {/* Column 3 */}
-        <div className="flex flex-col gap-2 sm:gap-2.5 md:gap-3 mt-[16px] sm:mt-[26px] md:mt-[32px]">
+        <div className="flex flex-col gap-2 sm:gap-2.5 md:gap-3 mt-[12px] min-[360px]:mt-[16px] sm:mt-[26px] md:mt-[32px]">
           {col3.map((member) => (
             <PhotoCard
               key={member.id}
               member={member}
-              className="w-[88px] h-[96px] sm:w-[136px] sm:h-[146px] md:w-[162px] md:h-[172px]"
+              className="w-[80px] min-[360px]:w-[88px] h-[88px] min-[360px]:h-[96px] sm:w-[136px] sm:h-[146px] md:w-[162px] md:h-[172px]"
               hoveredId={hoveredId}
               onHover={setHoveredId}
               onSelect={handleSelect}
@@ -324,7 +324,7 @@ function MemberRow({
       </div>
 
       {/* Role */}
-      <p className="mt-1 pl-[24px] sm:pl-[27px] text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.16em] text-[#64748b]">
+      <p className="mt-1 pl-[24px] sm:pl-[27px] text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider sm:tracking-[0.16em] text-[#64748b] leading-tight">
         {member.role}
       </p>
     </div>

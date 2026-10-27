@@ -287,7 +287,7 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onOpenContact }) => {
                     {article.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#425466] leading-relaxed line-clamp-3">
+                  <p className="text-xs sm:text-sm text-[#425466] leading-relaxed">
                     {article.summary}
                   </p>
 

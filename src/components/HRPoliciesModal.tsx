@@ -247,15 +247,15 @@ export const HRPoliciesModal: React.FC<HRPoliciesModalProps> = ({ isOpen, onClos
                       : 'hover:bg-white/60 border border-transparent'
                   }`}
                 >
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold text-[#0a2540] line-clamp-1">{item.title}</span>
-                    <span className={`text-[9px] font-mono-code font-bold px-1.5 py-0.5 rounded ${
+                  <div className="flex items-center justify-between gap-1">
+                    <span className="text-xs font-bold text-[#0a2540]">{item.title}</span>
+                    <span className={`text-[9px] font-mono-code font-bold px-1.5 py-0.5 rounded shrink-0 ${
                       selectedPolicy === item.id ? 'bg-[#2e3192] text-white' : 'text-slate-500 bg-slate-200/60'
                     }`}>
                       {item.badge}
                     </span>
                   </div>
-                  <div className="text-[11px] text-slate-500 line-clamp-1">
+                  <div className="text-[11px] text-slate-500">
                     {item.category}
                   </div>
                 </button>

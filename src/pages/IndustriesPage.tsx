@@ -248,7 +248,7 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ onOpenContact })
                       <div className="p-3 rounded-xl bg-[#2e3192]/10 text-[#2e3192] group-hover:scale-110 group-hover:bg-[#ea4800]/10 group-hover:text-[#ea4800] transition-all">
                         <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                       </div>
-                      <span className="text-[10px] sm:text-[11px] font-mono-code font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/60 truncate max-w-[200px]">
+                      <span className="text-[10px] sm:text-[11px] font-mono-code font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700 border border-slate-200/60">
                         {item.highlight}
                       </span>
                     </div>

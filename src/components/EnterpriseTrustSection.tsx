@@ -68,20 +68,20 @@ export const EnterpriseTrustSection: React.FC = () => {
         </div>
 
         {/* 4-Box Certification Grid - Side-by-side on mobile (2 cols) and desktop (4 cols) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 mb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-5 mb-12">
           {certifications.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div 
                 key={idx}
-                className="bg-[#f6f9fc] rounded-2xl p-4 sm:p-6 border border-slate-200/80 stripe-card-shadow flex flex-col justify-between group hover:bg-white transition-all"
+                className="bg-[#f6f9fc] rounded-2xl p-3.5 sm:p-6 border border-slate-200/80 stripe-card-shadow flex flex-col justify-between group hover:bg-white transition-all min-h-[170px] sm:min-h-[220px]"
               >
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="flex items-center justify-between">
-                    <div className="p-2 sm:p-2.5 rounded-xl bg-white text-[#2e3192] shadow-sm border border-slate-200/60 inline-flex">
+                <div className="space-y-2.5 sm:space-y-4">
+                  <div className="flex items-center justify-between gap-1">
+                    <div className="p-1.5 sm:p-2.5 rounded-xl bg-white text-[#2e3192] shadow-sm border border-slate-200/60 inline-flex shrink-0">
                       <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
-                    <span className="text-[9px] sm:text-[10px] font-mono-code font-bold uppercase px-1.5 sm:px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                    <span className="text-[8.5px] sm:text-[10px] font-mono-code font-bold uppercase px-1.5 sm:px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-center shrink-0">
                       {item.badge}
                     </span>
                   </div>
@@ -90,13 +90,13 @@ export const EnterpriseTrustSection: React.FC = () => {
                     <h3 className="text-xs sm:text-base font-bold text-[#0a2540] tracking-tight group-hover:text-[#2e3192] transition-colors leading-snug">
                       {item.title}
                     </h3>
-                    <p className="text-[11px] sm:text-xs text-[#425466] leading-relaxed line-clamp-3 sm:line-clamp-none">
+                    <p className="text-[10.5px] sm:text-xs text-[#425466] leading-relaxed">
                       {item.subtitle}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-3 sm:pt-4 mt-3 sm:mt-4 border-t border-slate-200/60 flex items-center gap-1.5 text-[10px] sm:text-[11px] font-mono-code text-emerald-600 font-semibold">
+                <div className="pt-2.5 sm:pt-4 mt-2.5 sm:mt-4 border-t border-slate-200/60 flex items-center gap-1.5 text-[9.5px] sm:text-[11px] font-mono-code text-emerald-600 font-semibold">
                   <CheckCircle2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
                   <span>Audited & Active</span>
                 </div>

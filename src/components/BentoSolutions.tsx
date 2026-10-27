@@ -291,18 +291,20 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
               <div className="absolute inset-0 bg-gradient-to-t from-[#0a2540]/90 via-[#0a2540]/30 to-transparent" />
               
               {/* Telemetry Glass Badge */}
-              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[10px] font-mono-code font-bold text-[#0a2540] shadow-sm">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                <span>CLEAN CORE VALIDATED · ZERO MODIFICATIONS</span>
+              <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full bg-white/95 backdrop-blur-md text-[9px] sm:text-[10px] font-mono-code font-bold text-[#0a2540] shadow-sm max-w-[90%]">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse shrink-0" />
+                <span className="truncate sm:overflow-visible">
+                  CLEAN CORE VALIDATED<span className="hidden sm:inline"> · ZERO MODIFICATIONS</span>
+                </span>
               </div>
 
               {/* In-Image Live Readout */}
-              <div className="absolute bottom-3 left-3 right-3 text-white flex items-end justify-between">
+              <div className="absolute bottom-3 left-3 right-3 text-white flex flex-col sm:flex-row items-start sm:items-end justify-between gap-1.5 sm:gap-2">
                 <div>
                   <div className="text-[10px] font-mono-code text-indigo-200 uppercase tracking-wider">S/4HANA Cloud BTP</div>
-                  <div className="text-base sm:text-lg font-bold tracking-tight">Rapid Deployment Suite (RDS)</div>
+                  <div className="text-sm sm:text-lg font-bold tracking-tight">Rapid Deployment Suite (RDS)</div>
                 </div>
-                <span className="text-xs font-mono-code font-bold bg-[#ea4800] text-white px-2.5 py-1 rounded-lg shadow-sm">
+                <span className="text-[11px] sm:text-xs font-mono-code font-bold bg-[#ea4800] text-white px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-lg shadow-sm shrink-0">
                   40% Velocity Boost
                 </span>
               </div>
@@ -610,15 +612,15 @@ export const BentoSolutions: React.FC<BentoSolutionsProps> = ({ onOpenContact })
               </div>
 
               {/* 3 Continent Footprint Tags */}
-              <div className="flex flex-wrap items-center gap-2 pt-1 text-xs font-semibold">
-                <span className="px-3 py-1 rounded-full bg-slate-100 text-[#0a2540] border border-slate-200">
+              <div className="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-1 text-[11px] sm:text-xs font-semibold">
+                <span className="px-2.5 sm:px-3 py-1 rounded-full bg-slate-100 text-[#0a2540] border border-slate-200">
                   🇮🇳 Hyderabad HQ & CoE
                 </span>
-                <span className="px-3 py-1 rounded-full bg-slate-100 text-[#0a2540] border border-slate-200">
+                <span className="px-2.5 sm:px-3 py-1 rounded-full bg-slate-100 text-[#0a2540] border border-slate-200">
                   🇦🇪 Dubai Internet City (In5)
                 </span>
-                <span className="px-3 py-1 rounded-full bg-slate-100 text-[#0a2540] border border-slate-200">
-                  🇺🇸 Phoenix / Scottsdale Practice
+                <span className="px-2.5 sm:px-3 py-1 rounded-full bg-slate-100 text-[#0a2540] border border-slate-200">
+                  🇺🇸 Phoenix Practice
                 </span>
               </div>
             </div>

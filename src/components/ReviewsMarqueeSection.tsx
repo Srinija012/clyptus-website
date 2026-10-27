@@ -125,7 +125,7 @@ const VerifiedBadge: React.FC = () => (
 // Individual Testimonial Card Component (Mobile-Optimized Compact & Responsive)
 const ReviewCard: React.FC<{ review: ClientReview }> = ({ review }) => {
   return (
-    <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 border border-slate-200/90 shadow-[0_4px_16px_rgba(10,37,64,0.04)] hover:shadow-[0_12px_32px_rgba(46,49,146,0.08)] hover:border-[#2e3192]/40 transition-all w-[270px] sm:w-[340px] md:w-[380px] shrink-0 flex flex-col justify-between group">
+    <div className="bg-white rounded-2xl p-4 sm:p-5 md:p-6 border border-slate-200/90 shadow-[0_4px_16px_rgba(10,37,64,0.04)] hover:shadow-[0_12px_32px_rgba(46,49,146,0.08)] hover:border-[#2e3192]/40 transition-all w-[260px] sm:w-[320px] md:w-[360px] shrink-0 flex flex-col justify-between group">
       <div>
         {/* Top Header: Avatar + Name with Verified Badge + Handle */}
         <div className="flex items-center gap-2.5 sm:gap-3">
@@ -154,15 +154,15 @@ const ReviewCard: React.FC<{ review: ClientReview }> = ({ review }) => {
           </div>
         </div>
 
-        {/* Review Quote - High contrast, legible typography matching image */}
-        <p className="text-[11px] sm:text-[13px] text-[#334155] leading-snug sm:leading-relaxed mt-2.5 sm:mt-3.5 font-normal line-clamp-4 sm:line-clamp-none">
+        {/* Review Quote - Uncropped, High contrast, Legible typography */}
+        <p className="text-xs sm:text-[13px] text-[#334155] leading-relaxed mt-2.5 sm:mt-3.5 font-normal">
           {review.review}
         </p>
       </div>
 
       {/* Subtle Bottom Meta Tag */}
       <div className="mt-3 pt-2.5 sm:mt-4 sm:pt-3 border-t border-slate-100 flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-mono-code">
-        <span className="truncate max-w-[170px] sm:max-w-[220px] text-slate-500 font-medium">{review.role}</span>
+        <span className="truncate max-w-[150px] sm:max-w-[200px] text-slate-500 font-medium">{review.role}</span>
         <span className="text-[#2e3192] font-semibold truncate shrink-0">{review.company.split(' ')[0]}</span>
       </div>
     </div>
@@ -183,9 +183,9 @@ export const ReviewsMarqueeSection: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 relative z-10 text-center space-y-3">
         {/* Eyebrow badge with official Clyptus stats */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#2e3192]/10 border border-[#2e3192]/20 text-xs font-bold font-mono-code uppercase tracking-wider text-[#2e3192]">
-          <Star className="w-3.5 h-3.5 text-[#ea4800] fill-[#ea4800]" />
-          <span>97% Client Satisfaction · 1,313+ Positive Reviews</span>
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-[#2e3192]/10 border border-[#2e3192]/20 text-[10px] sm:text-xs font-bold font-mono-code uppercase tracking-wider text-[#2e3192] max-w-full">
+          <Star className="w-3.5 h-3.5 text-[#ea4800] fill-[#ea4800] shrink-0" />
+          <span className="truncate">97% Client Satisfaction · 1,313+ Positive Reviews</span>
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-light tracking-[-0.03em] text-[#0a2540] leading-tight">
